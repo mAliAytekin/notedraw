@@ -1,0 +1,29 @@
+{
+  "shapes": 300,
+  "cards": 100,
+  "activeEditors": 1,
+  "maxEditors": 1,
+  "renderedNotes": [
+    "Ölçüm 0"
+  ],
+  "renderCount": 144,
+  "samples": 72,
+  "inputToFrameMedianMs": 9.800000011920929,
+  "inputToFrameP95Ms": 20.899999976158142,
+  "environment": {
+    "date": "2026-10-08",
+    "platform": "macOS arm64",
+    "browser": "system Google Chrome via Playwright 1.64.0",
+    "viewport": "1280x850",
+    "mode": "Vite test / React StrictMode",
+    "scene": "100 Markdown cards + 200 geo shapes; one visible active card",
+    "input": "72 characters at 15ms intervals"
+  },
+  "measurement": "input capture to next requestAnimationFrame; not completed paint or durable commit",
+  "limitations": [
+    "Single local run; hardware/browser dependent",
+    "SDK culls off-screen cards; not all 300 shapes visible at once",
+    "Render counts include StrictMode; timing is not a production benchmark",
+    "Large PDFs, many boards, save serialization and export throughput not measured"
+  ]
+}

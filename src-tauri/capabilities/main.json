@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main",
+  "description": "Only the main application window; workspace files are scoped by Rust commands.",
+  "windows": ["main"],
+  "permissions": ["core:default", "core:window:allow-destroy"]
+}

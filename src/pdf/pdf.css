@@ -1,0 +1,57 @@
+.pdf-panel { position: fixed; z-index: 350; display: flex; flex-direction: column; background: #fcfdfc; border: 1px solid #c7d6ca; border-radius: 12px; box-shadow: 0 16px 60px #233e2a26; color: #355140; overflow: hidden; }
+.pdf-heading { padding: 12px 14px 3px; display: flex; align-items: center; justify-content: space-between; font-size: 9px; letter-spacing: 1.8px; color: #7a9583; }
+.pdf-heading button { font-size: 18px; border: 0; background: none; cursor: pointer; color: inherit; }
+.pdf-heading .pdf-drag-handle { display: flex; align-items: center; gap: 8px; flex: 1; padding: 6px 0; font: inherit; letter-spacing: inherit; text-align: left; cursor: grab; touch-action: none; user-select: none; }
+.pdf-heading .pdf-drag-handle:active { cursor: grabbing; }
+.pdf-drag-hint { margin-left: auto; margin-right: 12px; font-size: 9px; letter-spacing: 0; }
+.pdf-resize-handle { position: absolute; z-index: 3; border: 0; padding: 0; background: transparent; color: #7a9583; touch-action: none; user-select: none; }
+.pdf-resize-handle:focus-visible { outline: 2px solid #45866d; outline-offset: -2px; background: #45866d20; }
+.pdf-resize-n, .pdf-resize-s { left: 14px; right: 14px; height: 6px; cursor: ns-resize; }
+.pdf-resize-n { top: 0; } .pdf-resize-s { bottom: 0; }
+.pdf-resize-e, .pdf-resize-w { top: 14px; bottom: 14px; width: 6px; cursor: ew-resize; }
+.pdf-resize-e { right: 0; } .pdf-resize-w { left: 0; }
+.pdf-resize-ne, .pdf-resize-nw, .pdf-resize-se, .pdf-resize-sw { width: 14px; height: 14px; }
+.pdf-resize-ne { top: 0; right: 0; cursor: nesw-resize; }
+.pdf-resize-nw { top: 0; left: 0; cursor: nwse-resize; }
+.pdf-resize-se { bottom: 0; right: 0; cursor: nwse-resize; font-size: 11px; line-height: 14px; }
+.pdf-resize-sw { bottom: 0; left: 0; cursor: nesw-resize; }
+.pdf-panel > select { margin: 3px 12px 10px; border: 0; background: transparent; color: inherit; min-width: 0; font: 600 12px inherit; padding: 5px 0; }
+.pdf-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; border-block: 1px solid #e0e8e2; padding: 8px; font: 11px sans-serif; }
+.pdf-controls button { width: 26px; height: 26px; border-radius: 5px; background: #f0f5f1; border: 1px solid #dce6df; color: #456b51; cursor: pointer; }
+.pdf-controls button:disabled { opacity: .4; cursor: default; }
+.pdf-controls input { width: 40px; padding: 4px; border: 1px solid #d2dfd5; border-radius: 4px; color: #36533d; }
+.pdf-controls output { min-width: 35px; text-align: center; }
+.pdf-control-divider { height: 20px; width: 1px; background: #dbe6de; margin-inline: 4px; }
+.pdf-scroll { flex: 1; min-height: 0; overflow: auto; padding: 14px; background: #e7ece8; overscroll-behavior: contain; }
+.pdf-page { position: relative; background: #fff; box-shadow: 0 2px 9px #17291e26; --scale-round-x: 1px; --scale-round-y: 1px; }
+.pdf-page canvas { display: block; }
+.pdf-selection-tools { display: flex; flex-wrap: wrap; gap: 5px; padding: 8px 12px; border-bottom: 1px solid #dce5df; }
+.pdf-selection-tools button, .pdf-mark-list button { border: 1px solid #c7d6ca; border-radius: 5px; background: #edf4ef; color: #355140; padding: 5px 7px; font-size: 11px; cursor: pointer; }
+.pdf-selection-tools button:disabled, .pdf-mark-list button:disabled { opacity: .45; cursor: default; }
+.pdf-selection-tools button[draggable='true'] { cursor: grab; }
+.pdf-selection-tools small { width: 100%; font-size: 10px; opacity: .8; }
+.pdf-annotations { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.pdf-mark-list { padding: 7px 12px; font-size: 11px; border-top: 1px solid #dce5df; }
+.pdf-mark-list summary { cursor: pointer; }
+.pdf-mark-list ul { margin: 6px 0 0; padding: 0; list-style: none; max-height: 110px; overflow: auto; }
+.pdf-mark-list li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-block: 3px; }
+.pdf-mark-list li span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pdf-mark-actions { position: absolute; bottom: 36px; left: 12px; right: 12px; z-index: 4; padding: 10px; border: 1px solid #c7d6ca; border-radius: 8px; background: #fcfdfc; box-shadow: 0 4px 24px #233e2a30; font-size: 12px; }
+.pdf-mark-actions header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pdf-mark-actions p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 6px 0; }
+.pdf-mark-actions button { margin: 3px; border: 1px solid #c7d6ca; border-radius: 5px; background: #edf4ef; color: #355140; padding: 5px 7px; cursor: pointer; font-size: 11px; }
+.workspace[data-theme='dark'] .pdf-mark-actions { background: #22392a; border-color: #46674e; }
+.workspace[data-theme='dark'] .pdf-mark-actions button { background: #2d4b36; color: #d0e2d3; border-color: #46674e; }
+.workspace[data-theme='dark'] .pdf-selection-tools, .workspace[data-theme='dark'] .pdf-mark-list { border-color: #375540; }
+.workspace[data-theme='dark'] .pdf-selection-tools button, .workspace[data-theme='dark'] .pdf-mark-list button { background: #2d4b36; color: #d0e2d3; border-color: #46674e; }
+.pdf-status { margin: 0; padding: 8px 14px; font-size: 11px; background: #f4f6e9; }
+.pdf-footer { padding: 10px 20px 10px 12px; font-size: 9px; color: #8a9c8e; border-top: 1px solid #dce5df; }
+.workspace[data-theme='dark'] .pdf-panel { background: #22392a; border-color: #46674e; color: #d0e2d3; }
+.workspace[data-theme='dark'] .pdf-scroll { background: #182c20; }
+.workspace[data-theme='dark'] .pdf-controls, .workspace[data-theme='dark'] .pdf-footer { border-color: #375540; }
+/* TextLayer layout follows Mozilla PDF.js (Apache-2.0), web/pdf_viewer.css. */
+.pdf-page .textLayer { color-scheme: only light; position: absolute; text-align: initial; inset: 0; overflow: clip; opacity: 1; line-height: 1; letter-spacing: normal; word-spacing: normal; text-size-adjust: none; forced-color-adjust: none; transform-origin: 0 0; caret-color: CanvasText; z-index: 0; --min-font-size: 1; --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size)); --min-font-size-inv: calc(1 / var(--min-font-size)); }
+.pdf-page .textLayer :is(span, br) { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0 0; user-select: text; }
+.pdf-page .textLayer > :not(.markedContent), .pdf-page .textLayer .markedContent span:not(.markedContent) { z-index: 1; --font-height: 0; font-size: calc(var(--text-scale-factor) * var(--font-height)); --scale-x: 1; --rotate: 0deg; transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv)); }
+.pdf-page .textLayer .markedContent { display: contents; }
+.pdf-page .textLayer ::selection { background: #4388d477; }

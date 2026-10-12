@@ -1,0 +1,21 @@
+# Only application/build inputs enter the context (no local workspaces or keys).
+**
+!Dockerfile
+!.dockerignore
+!package.json
+!package-lock.json
+!index.html
+!tsconfig.json
+!vite.config.ts
+!src/
+!src/**
+!tests/
+!tests/*.ts
+!scripts/
+!scripts/copy-pdf-assets.mjs
+!docker/
+!docker/nginx.conf
+!public/
+!public/**
+public/pdfjs/
+**/.DS_Store
